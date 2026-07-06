@@ -1,4 +1,8 @@
 pisarevdanila.online {
+    handle /api/* {
+        reverse_proxy backend:3333
+    }
+
     root * /usr/share/caddy
     try_files {path} /index.html
     file_server
