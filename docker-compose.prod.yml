@@ -9,9 +9,8 @@ services:
     image: caddy
     container_name: caddy_container
     ports:
-      # - "80:80"
-      # - "443:443"
-      - 8081:80
+      - "80:80"
+      - "443:443"
     restart: unless-stopped
     volumes:
       - ./frontend/Caddyfile:/etc/caddy/Caddyfile
