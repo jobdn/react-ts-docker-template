@@ -1,15 +1,20 @@
+name: react-ts-template-prod # TODO: указать свое имя
+
 services:
   caddy:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile.prod
-    container_name: prod_frontend
+
+    image: caddy
+    container_name: caddy_container
     ports:
-      - "80:80"
-      - "443:443"
+      # - "80:80"
+      # - "443:443"
+      - 8081:80
     restart: unless-stopped
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./frontend/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
 

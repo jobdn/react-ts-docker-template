@@ -10,7 +10,7 @@ function App() {
         alignItems: "center",
       }}
     >
-      {HELLO_TEXT || "there is not text !!!"}
+      {HELLO_TEXT}
     </div>
   );
 }
