@@ -3,9 +3,11 @@ pisarevdanila.online {
         reverse_proxy backend:3333
     }
 
-    root * /usr/share/caddy
-    try_files {path} /index.html
-    file_server
+    handle {
+        root * /usr/share/caddy
+        try_files {path} /index.html
+        file_server
+    }
 }
 
 :80 {
